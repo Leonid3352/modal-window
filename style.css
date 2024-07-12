@@ -6,19 +6,22 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
+    z-index: 99999;
+    right: -400px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+    transition: right 0.5s ease-out;
 }
 
 .modal-content {
     background-color: #cfb6b6;
     margin: 15% auto;
     padding: 20px;
+    height: 100px;
     border: 5px solid #8e0b0b;
     border-radius: 100px;
 }
@@ -28,4 +31,22 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
+@keyframes slideIn {
+    0% {
+      right: -400px;
+    }
+    100% {
+      right: 0;
+    }
+  }
+  
+  @keyframes slideOut {
+    0% {
+      right: 0;
+    }
+    100% {
+      right: -800px;
+    }
+  }
